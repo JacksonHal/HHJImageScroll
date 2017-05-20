@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A6F117781ED0265500B98C0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F117771ED0265500B98C0F /* main.m */; };
+		A6F1177B1ED0265500B98C0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1177A1ED0265500B98C0F /* AppDelegate.m */; };
+		A6F1177D1ED0265500B98C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6F1177C1ED0265500B98C0F /* Assets.xcassets */; };
+		A6F117801ED0265500B98C0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F1177E1ED0265500B98C0F /* LaunchScreen.storyboard */; };
+		A6F1178B1ED0265500B98C0F /* HHJImageScrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1178A1ED0265500B98C0F /* HHJImageScrollTests.m */; };
+		A6F117961ED0265500B98C0F /* HHJImageScrollUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F117951ED0265500B98C0F /* HHJImageScrollUITests.m */; };
+		A6F117A51ED026D200B98C0F /* HHJRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F117A41ED026D200B98C0F /* HHJRootVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6F117871ED0265500B98C0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6F1176B1ED0265500B98C0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6F117721ED0265500B98C0F;
+			remoteInfo = HHJImageScroll;
+		};
+		A6F117921ED0265500B98C0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6F1176B1ED0265500B98C0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6F117721ED0265500B98C0F;
+			remoteInfo = HHJImageScroll;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A6F117731ED0265500B98C0F /* HHJImageScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHJImageScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6F117771ED0265500B98C0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A6F117791ED0265500B98C0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A6F1177A1ED0265500B98C0F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A6F1177C1ED0265500B98C0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6F1177F1ED0265500B98C0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A6F117811ED0265500B98C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6F117861ED0265500B98C0F /* HHJImageScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHJImageScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6F1178A1ED0265500B98C0F /* HHJImageScrollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHJImageScrollTests.m; sourceTree = "<group>"; };
+		A6F1178C1ED0265500B98C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6F117911ED0265500B98C0F /* HHJImageScrollUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHJImageScrollUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6F117951ED0265500B98C0F /* HHJImageScrollUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHJImageScrollUITests.m; sourceTree = "<group>"; };
+		A6F117971ED0265500B98C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6F117A31ED026D200B98C0F /* HHJRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHJRootVC.h; sourceTree = "<group>"; };
+		A6F117A41ED026D200B98C0F /* HHJRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHJRootVC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6F117701ED0265500B98C0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F117831ED0265500B98C0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F1178E1ED0265500B98C0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6F1176A1ED0265500B98C0F = {
+			isa = PBXGroup;
+			children = (
+				A6F117751ED0265500B98C0F /* HHJImageScroll */,
+				A6F117891ED0265500B98C0F /* HHJImageScrollTests */,
+				A6F117941ED0265500B98C0F /* HHJImageScrollUITests */,
+				A6F117741ED0265500B98C0F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6F117741ED0265500B98C0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6F117731ED0265500B98C0F /* HHJImageScroll.app */,
+				A6F117861ED0265500B98C0F /* HHJImageScrollTests.xctest */,
+				A6F117911ED0265500B98C0F /* HHJImageScrollUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6F117751ED0265500B98C0F /* HHJImageScroll */ = {
+			isa = PBXGroup;
+			children = (
+				A6F117791ED0265500B98C0F /* AppDelegate.h */,
+				A6F1177A1ED0265500B98C0F /* AppDelegate.m */,
+				A6F117A31ED026D200B98C0F /* HHJRootVC.h */,
+				A6F117A41ED026D200B98C0F /* HHJRootVC.m */,
+				A6F1177C1ED0265500B98C0F /* Assets.xcassets */,
+				A6F1177E1ED0265500B98C0F /* LaunchScreen.storyboard */,
+				A6F117811ED0265500B98C0F /* Info.plist */,
+				A6F117761ED0265500B98C0F /* Supporting Files */,
+			);
+			path = HHJImageScroll;
+			sourceTree = "<group>";
+		};
+		A6F117761ED0265500B98C0F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6F117771ED0265500B98C0F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6F117891ED0265500B98C0F /* HHJImageScrollTests */ = {
+			isa = PBXGroup;
+			children = (
+				A6F1178A1ED0265500B98C0F /* HHJImageScrollTests.m */,
+				A6F1178C1ED0265500B98C0F /* Info.plist */,
+			);
+			path = HHJImageScrollTests;
+			sourceTree = "<group>";
+		};
+		A6F117941ED0265500B98C0F /* HHJImageScrollUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A6F117951ED0265500B98C0F /* HHJImageScrollUITests.m */,
+				A6F117971ED0265500B98C0F /* Info.plist */,
+			);
+			path = HHJImageScrollUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6F117721ED0265500B98C0F /* HHJImageScroll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6F1179A1ED0265500B98C0F /* Build configuration list for PBXNativeTarget "HHJImageScroll" */;
+			buildPhases = (
+				A6F1176F1ED0265500B98C0F /* Sources */,
+				A6F117701ED0265500B98C0F /* Frameworks */,
+				A6F117711ED0265500B98C0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHJImageScroll;
+			productName = HHJImageScroll;
+			productReference = A6F117731ED0265500B98C0F /* HHJImageScroll.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6F117851ED0265500B98C0F /* HHJImageScrollTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6F1179D1ED0265500B98C0F /* Build configuration list for PBXNativeTarget "HHJImageScrollTests" */;
+			buildPhases = (
+				A6F117821ED0265500B98C0F /* Sources */,
+				A6F117831ED0265500B98C0F /* Frameworks */,
+				A6F117841ED0265500B98C0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6F117881ED0265500B98C0F /* PBXTargetDependency */,
+			);
+			name = HHJImageScrollTests;
+			productName = HHJImageScrollTests;
+			productReference = A6F117861ED0265500B98C0F /* HHJImageScrollTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A6F117901ED0265500B98C0F /* HHJImageScrollUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6F117A01ED0265500B98C0F /* Build configuration list for PBXNativeTarget "HHJImageScrollUITests" */;
+			buildPhases = (
+				A6F1178D1ED0265500B98C0F /* Sources */,
+				A6F1178E1ED0265500B98C0F /* Frameworks */,
+				A6F1178F1ED0265500B98C0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6F117931ED0265500B98C0F /* PBXTargetDependency */,
+			);
+			name = HHJImageScrollUITests;
+			productName = HHJImageScrollUITests;
+			productReference = A6F117911ED0265500B98C0F /* HHJImageScrollUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6F1176B1ED0265500B98C0F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = HHJ;
+				TargetAttributes = {
+					A6F117721ED0265500B98C0F = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = GNZBVV9WD3;
+						ProvisioningStyle = Automatic;
+					};
+					A6F117851ED0265500B98C0F = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = GNZBVV9WD3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A6F117721ED0265500B98C0F;
+					};
+					A6F117901ED0265500B98C0F = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = GNZBVV9WD3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A6F117721ED0265500B98C0F;
+					};
+				};
+			};
+			buildConfigurationList = A6F1176E1ED0265500B98C0F /* Build configuration list for PBXProject "HHJImageScroll" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6F1176A1ED0265500B98C0F;
+			productRefGroup = A6F117741ED0265500B98C0F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6F117721ED0265500B98C0F /* HHJImageScroll */,
+				A6F117851ED0265500B98C0F /* HHJImageScrollTests */,
+				A6F117901ED0265500B98C0F /* HHJImageScrollUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6F117711ED0265500B98C0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6F1177D1ED0265500B98C0F /* Assets.xcassets in Resources */,
+				A6F117801ED0265500B98C0F /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F117841ED0265500B98C0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F1178F1ED0265500B98C0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6F1176F1ED0265500B98C0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6F1177B1ED0265500B98C0F /* AppDelegate.m in Sources */,
+				A6F117A51ED026D200B98C0F /* HHJRootVC.m in Sources */,
+				A6F117781ED0265500B98C0F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F117821ED0265500B98C0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6F1178B1ED0265500B98C0F /* HHJImageScrollTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F1178D1ED0265500B98C0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6F117961ED0265500B98C0F /* HHJImageScrollUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6F117881ED0265500B98C0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6F117721ED0265500B98C0F /* HHJImageScroll */;
+			targetProxy = A6F117871ED0265500B98C0F /* PBXContainerItemProxy */;
+		};
+		A6F117931ED0265500B98C0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6F117721ED0265500B98C0F /* HHJImageScroll */;
+			targetProxy = A6F117921ED0265500B98C0F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A6F1177E1ED0265500B98C0F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6F1177F1ED0265500B98C0F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6F117981ED0265500B98C0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A6F117991ED0265500B98C0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6F1179B1ED0265500B98C0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GNZBVV9WD3;
+				INFOPLIST_FILE = HHJImageScroll/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HHJ.HHJImageScroll;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A6F1179C1ED0265500B98C0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GNZBVV9WD3;
+				INFOPLIST_FILE = HHJImageScroll/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HHJ.HHJImageScroll;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A6F1179E1ED0265500B98C0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GNZBVV9WD3;
+				INFOPLIST_FILE = HHJImageScrollTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HHJ.HHJImageScrollTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHJImageScroll.app/HHJImageScroll";
+			};
+			name = Debug;
+		};
+		A6F1179F1ED0265500B98C0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GNZBVV9WD3;
+				INFOPLIST_FILE = HHJImageScrollTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HHJ.HHJImageScrollTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHJImageScroll.app/HHJImageScroll";
+			};
+			name = Release;
+		};
+		A6F117A11ED0265500B98C0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = GNZBVV9WD3;
+				INFOPLIST_FILE = HHJImageScrollUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HHJ.HHJImageScrollUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HHJImageScroll;
+			};
+			name = Debug;
+		};
+		A6F117A21ED0265500B98C0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = GNZBVV9WD3;
+				INFOPLIST_FILE = HHJImageScrollUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HHJ.HHJImageScrollUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HHJImageScroll;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6F1176E1ED0265500B98C0F /* Build configuration list for PBXProject "HHJImageScroll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6F117981ED0265500B98C0F /* Debug */,
+				A6F117991ED0265500B98C0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6F1179A1ED0265500B98C0F /* Build configuration list for PBXNativeTarget "HHJImageScroll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6F1179B1ED0265500B98C0F /* Debug */,
+				A6F1179C1ED0265500B98C0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6F1179D1ED0265500B98C0F /* Build configuration list for PBXNativeTarget "HHJImageScrollTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6F1179E1ED0265500B98C0F /* Debug */,
+				A6F1179F1ED0265500B98C0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6F117A01ED0265500B98C0F /* Build configuration list for PBXNativeTarget "HHJImageScrollUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6F117A11ED0265500B98C0F /* Debug */,
+				A6F117A21ED0265500B98C0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6F1176B1ED0265500B98C0F /* Project object */;
+}
