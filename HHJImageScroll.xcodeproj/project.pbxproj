@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40F8665C4C023D633CA5384C /* libPods-HHJImageScroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B029B787C6A953802217B3EB /* libPods-HHJImageScroll.a */; };
+		A67865731ED057CE003C2A11 /* UIView+HHJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865721ED057CE003C2A11 /* UIView+HHJExtension.m */; };
 		A6F117781ED0265500B98C0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F117771ED0265500B98C0F /* main.m */; };
 		A6F1177B1ED0265500B98C0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1177A1ED0265500B98C0F /* AppDelegate.m */; };
 		A6F1177D1ED0265500B98C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6F1177C1ED0265500B98C0F /* Assets.xcassets */; };
@@ -34,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44F699FE78FBD694A5FF5DCA /* Pods-HHJImageScroll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHJImageScroll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HHJImageScroll/Pods-HHJImageScroll.debug.xcconfig"; sourceTree = "<group>"; };
+		651B9F6BBA2C47A2EFCDACCB /* Pods-HHJImageScroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHJImageScroll.release.xcconfig"; path = "Pods/Target Support Files/Pods-HHJImageScroll/Pods-HHJImageScroll.release.xcconfig"; sourceTree = "<group>"; };
+		A67865711ED057CE003C2A11 /* UIView+HHJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HHJExtension.h"; sourceTree = "<group>"; };
+		A67865721ED057CE003C2A11 /* UIView+HHJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HHJExtension.m"; sourceTree = "<group>"; };
 		A6F117731ED0265500B98C0F /* HHJImageScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHJImageScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F117771ED0265500B98C0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6F117791ED0265500B98C0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -49,6 +55,7 @@
 		A6F117971ED0265500B98C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6F117A31ED026D200B98C0F /* HHJRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHJRootVC.h; sourceTree = "<group>"; };
 		A6F117A41ED026D200B98C0F /* HHJRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHJRootVC.m; sourceTree = "<group>"; };
+		B029B787C6A953802217B3EB /* libPods-HHJImageScroll.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HHJImageScroll.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F8665C4C023D633CA5384C /* libPods-HHJImageScroll.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A678656F1ED04075003C2A11 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				A67865701ED040B1003C2A11 /* HHJImageScrollView */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		A67865701ED040B1003C2A11 /* HHJImageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				A67865711ED057CE003C2A11 /* UIView+HHJExtension.h */,
+				A67865721ED057CE003C2A11 /* UIView+HHJExtension.m */,
+			);
+			path = HHJImageScrollView;
+			sourceTree = "<group>";
+		};
 		A6F1176A1ED0265500B98C0F = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				A6F117891ED0265500B98C0F /* HHJImageScrollTests */,
 				A6F117941ED0265500B98C0F /* HHJImageScrollUITests */,
 				A6F117741ED0265500B98C0F /* Products */,
+				E1BC919579933FDA2FA3D603 /* Pods */,
+				B621B03591DB29F753385992 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +126,7 @@
 		A6F117751ED0265500B98C0F /* HHJImageScroll */ = {
 			isa = PBXGroup;
 			children = (
+				A678656F1ED04075003C2A11 /* Lib */,
 				A6F117791ED0265500B98C0F /* AppDelegate.h */,
 				A6F1177A1ED0265500B98C0F /* AppDelegate.m */,
 				A6F117A31ED026D200B98C0F /* HHJRootVC.h */,
@@ -137,6 +165,23 @@
 			path = HHJImageScrollUITests;
 			sourceTree = "<group>";
 		};
+		B621B03591DB29F753385992 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B029B787C6A953802217B3EB /* libPods-HHJImageScroll.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1BC919579933FDA2FA3D603 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44F699FE78FBD694A5FF5DCA /* Pods-HHJImageScroll.debug.xcconfig */,
+				651B9F6BBA2C47A2EFCDACCB /* Pods-HHJImageScroll.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6F1179A1ED0265500B98C0F /* Build configuration list for PBXNativeTarget "HHJImageScroll" */;
 			buildPhases = (
+				051D040BA933E8A62F5B975F /* [CP] Check Pods Manifest.lock */,
 				A6F1176F1ED0265500B98C0F /* Sources */,
 				A6F117701ED0265500B98C0F /* Frameworks */,
 				A6F117711ED0265500B98C0F /* Resources */,
+				850B063BB7B93E45E6B1EA3A /* [CP] Embed Pods Frameworks */,
+				E0DC18275ECABEBFB99DEAA3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +315,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		051D040BA933E8A62F5B975F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		850B063BB7B93E45E6B1EA3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HHJImageScroll/Pods-HHJImageScroll-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0DC18275ECABEBFB99DEAA3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HHJImageScroll/Pods-HHJImageScroll-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A6F1176F1ED0265500B98C0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -275,6 +371,7 @@
 				A6F1177B1ED0265500B98C0F /* AppDelegate.m in Sources */,
 				A6F117A51ED026D200B98C0F /* HHJRootVC.m in Sources */,
 				A6F117781ED0265500B98C0F /* main.m in Sources */,
+				A67865731ED057CE003C2A11 /* UIView+HHJExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,10 +510,12 @@
 		};
 		A6F1179B1ED0265500B98C0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44F699FE78FBD694A5FF5DCA /* Pods-HHJImageScroll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GNZBVV9WD3;
 				INFOPLIST_FILE = HHJImageScroll/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HHJ.HHJImageScroll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,10 +524,12 @@
 		};
 		A6F1179C1ED0265500B98C0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 651B9F6BBA2C47A2EFCDACCB /* Pods-HHJImageScroll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GNZBVV9WD3;
 				INFOPLIST_FILE = HHJImageScroll/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HHJ.HHJImageScroll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
