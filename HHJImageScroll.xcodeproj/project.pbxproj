@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		40F8665C4C023D633CA5384C /* libPods-HHJImageScroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B029B787C6A953802217B3EB /* libPods-HHJImageScroll.a */; };
 		A67865731ED057CE003C2A11 /* UIView+HHJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865721ED057CE003C2A11 /* UIView+HHJExtension.m */; };
+		A67865761ED143C6003C2A11 /* HHJImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865751ED143C6003C2A11 /* HHJImageScrollView.m */; };
+		A67865791ED1629D003C2A11 /* HHJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865781ED1629D003C2A11 /* HHJCollectionViewCell.m */; };
+		A678657D1ED18179003C2A11 /* LocalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A678657C1ED18179003C2A11 /* LocalVC.m */; };
 		A6F117781ED0265500B98C0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F117771ED0265500B98C0F /* main.m */; };
 		A6F1177B1ED0265500B98C0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1177A1ED0265500B98C0F /* AppDelegate.m */; };
 		A6F1177D1ED0265500B98C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6F1177C1ED0265500B98C0F /* Assets.xcassets */; };
@@ -40,6 +43,12 @@
 		651B9F6BBA2C47A2EFCDACCB /* Pods-HHJImageScroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHJImageScroll.release.xcconfig"; path = "Pods/Target Support Files/Pods-HHJImageScroll/Pods-HHJImageScroll.release.xcconfig"; sourceTree = "<group>"; };
 		A67865711ED057CE003C2A11 /* UIView+HHJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HHJExtension.h"; sourceTree = "<group>"; };
 		A67865721ED057CE003C2A11 /* UIView+HHJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HHJExtension.m"; sourceTree = "<group>"; };
+		A67865741ED143C6003C2A11 /* HHJImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHJImageScrollView.h; sourceTree = "<group>"; };
+		A67865751ED143C6003C2A11 /* HHJImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHJImageScrollView.m; sourceTree = "<group>"; };
+		A67865771ED1629D003C2A11 /* HHJCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHJCollectionViewCell.h; sourceTree = "<group>"; };
+		A67865781ED1629D003C2A11 /* HHJCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHJCollectionViewCell.m; sourceTree = "<group>"; };
+		A678657B1ED18179003C2A11 /* LocalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalVC.h; sourceTree = "<group>"; };
+		A678657C1ED18179003C2A11 /* LocalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalVC.m; sourceTree = "<group>"; };
 		A6F117731ED0265500B98C0F /* HHJImageScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHJImageScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F117771ED0265500B98C0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6F117791ED0265500B98C0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,8 +106,21 @@
 			children = (
 				A67865711ED057CE003C2A11 /* UIView+HHJExtension.h */,
 				A67865721ED057CE003C2A11 /* UIView+HHJExtension.m */,
+				A67865741ED143C6003C2A11 /* HHJImageScrollView.h */,
+				A67865751ED143C6003C2A11 /* HHJImageScrollView.m */,
+				A67865771ED1629D003C2A11 /* HHJCollectionViewCell.h */,
+				A67865781ED1629D003C2A11 /* HHJCollectionViewCell.m */,
 			);
 			path = HHJImageScrollView;
+			sourceTree = "<group>";
+		};
+		A678657A1ED18106003C2A11 /* ScrollType */ = {
+			isa = PBXGroup;
+			children = (
+				A678657B1ED18179003C2A11 /* LocalVC.h */,
+				A678657C1ED18179003C2A11 /* LocalVC.m */,
+			);
+			path = ScrollType;
 			sourceTree = "<group>";
 		};
 		A6F1176A1ED0265500B98C0F = {
@@ -131,6 +153,7 @@
 				A6F1177A1ED0265500B98C0F /* AppDelegate.m */,
 				A6F117A31ED026D200B98C0F /* HHJRootVC.h */,
 				A6F117A41ED026D200B98C0F /* HHJRootVC.m */,
+				A678657A1ED18106003C2A11 /* ScrollType */,
 				A6F1177C1ED0265500B98C0F /* Assets.xcassets */,
 				A6F1177E1ED0265500B98C0F /* LaunchScreen.storyboard */,
 				A6F117811ED0265500B98C0F /* Info.plist */,
@@ -368,8 +391,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A67865761ED143C6003C2A11 /* HHJImageScrollView.m in Sources */,
+				A67865791ED1629D003C2A11 /* HHJCollectionViewCell.m in Sources */,
 				A6F1177B1ED0265500B98C0F /* AppDelegate.m in Sources */,
 				A6F117A51ED026D200B98C0F /* HHJRootVC.m in Sources */,
+				A678657D1ED18179003C2A11 /* LocalVC.m in Sources */,
 				A6F117781ED0265500B98C0F /* main.m in Sources */,
 				A67865731ED057CE003C2A11 /* UIView+HHJExtension.m in Sources */,
 			);
