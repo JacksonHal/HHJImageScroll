@@ -23,9 +23,19 @@
 
 
 /** 是否无限循环,默认Yes */
-@property (nonatomic,assign) BOOL isInfiniteLoop;
+@property (nonatomic,assign) BOOL               isInfiniteLoop;
 
 /** 本地图片数组 */
-@property (nonatomic, strong) NSArray *localImageNamesArray;
+@property (nonatomic, strong) NSArray           *localImageNamesArray;
+
+/** 是否自动滚动,默认Yes */
+@property (nonatomic, assign) BOOL               autoScroll;
+
+//图片的滚动方向，默认水平滚动
+@property (nonatomic, assign) UICollectionViewScrollDirection       scrollDirection;
+
+/*****************滚动控制***************/
+//设置自动滚动的时间间隔，默认为2s
+@property (nonatomic, assign)CGFloat            autoScrollTimeInterval;
 
 @end

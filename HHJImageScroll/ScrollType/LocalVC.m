@@ -24,7 +24,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     
-    HHJImageScrollView *imageScroll = [HHJImageScrollView imageScrollViewWithFrame:CGRectMake(0, 64, hjScreen_width, 180) isInfiniteLoop:YES imageNamesArray:nil];
+    NSArray *imageNameArray = @[@"h1.jpg",
+                                @"h2.jpg",
+                                @"h3.jpg",
+                                @"h4.jpg"];
+    
+    HHJImageScrollView *imageScroll = [HHJImageScrollView imageScrollViewWithFrame:CGRectMake(0, 64, hjScreen_width, 180) isInfiniteLoop:YES imageNamesArray:imageNameArray];
     [self.view addSubview:imageScroll];
     _imageScroll = imageScroll;
     
