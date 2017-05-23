@@ -22,7 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    //解决CollectionView里的cell的偏移问题；
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     NSArray *imageNameArray = @[@"h1.jpg",
                                 @"h2.jpg",
@@ -30,6 +31,7 @@
                                 @"h4.jpg"];
     
     HHJImageScrollView *imageScroll = [HHJImageScrollView imageScrollViewWithFrame:CGRectMake(0, 64, hjScreen_width, 180) isInfiniteLoop:YES imageNamesArray:imageNameArray];
+    imageScroll.autoScrollDirection = UICollectionViewScrollDirectionVertical;
     [self.view addSubview:imageScroll];
     _imageScroll = imageScroll;
     

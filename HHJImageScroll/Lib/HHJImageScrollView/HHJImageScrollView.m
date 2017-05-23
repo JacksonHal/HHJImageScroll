@@ -12,6 +12,8 @@
 
 NSString * const cellID = @"HHJCollectionViewCell";
 
+#define pageControlDotDefaultSize           CGSizeMake(10, 10)
+
 @interface HHJImageScrollView ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong)UICollectionViewFlowLayout             *flowLayout;
@@ -19,6 +21,7 @@ NSString * const cellID = @"HHJCollectionViewCell";
 @property (nonatomic, strong)NSArray                                *imagesArray;
 @property (nonatomic, assign)NSInteger                              totalItemsCount;
 @property (nonatomic, strong)NSTimer                                *timer;
+@property (nonatomic, strong)UIControl                              *pageControl;
 
 @end
 
@@ -47,8 +50,14 @@ NSString * const cellID = @"HHJCollectionViewCell";
     
     _autoScroll = YES;
     _isInfiniteLoop = YES;
-    _scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    _autoScrollDirection = UICollectionViewScrollDirectionHorizontal;
     _autoScrollTimeInterval = 2.0;
+    _hidesForSinglePage = YES;
+    _pageControlStyle = HHJScrollViewPageControlStyleSystem;
+    _pageControlDotSize = pageControlDotDefaultSize;
+    _pageControlRightOffset = 0;
+    _pageControlBottomOffset = 0;
+    _pageControlAliment = HHJPageControlAlimentCenter;
 }
 
 - (void)setUpMainView {
@@ -69,6 +78,38 @@ NSString * const cellID = @"HHJCollectionViewCell";
     [mainView registerClass:[HHJCollectionViewCell class] forCellWithReuseIdentifier:cellID];
     [self addSubview:mainView];
     _mainView = mainView;
+}
+
+-(void)setUpPageControl {
+    if (_pageControl) {
+        return;
+    }
+    if (_imagesArray.count == 0) {
+        return;
+    }
+    if (_imagesArray.count == 0 && self.hidesForSinglePage == YES) {
+        return;
+    }
+    switch (self.pageControlStyle) {
+        case HHJScrollViewPageControlStyleAnimated:
+        {
+        
+        }
+            break;
+        case HHJScrollViewPageControlStyleSystem:
+        {
+            UIPageControl *pageControl = [[UIPageControl alloc] init];
+            pageControl.numberOfPages = self.imagesArray.count;
+            pageControl.currentPage = [self pageControlIndexWithCurrentCellIndex:[self currentIndex]];
+            [self addSubview:pageControl];
+            _pageControl = pageControl;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 #pragma mark -UICollectionViewDelegate & UICollectionViewDatasource
@@ -100,31 +141,51 @@ NSString * const cellID = @"HHJCollectionViewCell";
 -(void)setImagesArray:(NSArray *)imagesArray {
     _imagesArray = imagesArray;
     _totalItemsCount = self.isInfiniteLoop ? self.imagesArray.count*100:self.imagesArray.count;
+    //开始定时器之前先暂停定时器
+    [self invalidateTimer];
     if (imagesArray.count != 0) {
         self.mainView.scrollEnabled = YES;
         [self setAutoScroll:self.autoScroll];
     }else {
         self.mainView.scrollEnabled = NO;
     }
+    [self setUpPageControl];
     [self.mainView reloadData];
 }
 
 -(void)setAutoScroll:(BOOL)autoScroll {
     _autoScroll = autoScroll;
+    //先暂停定时器
+    [self invalidateTimer];
     if (_autoScroll) {
         [self setupTimer];
     }
 }
 
-- (void)setScrollDirection:(UICollectionViewScrollDirection)scrollDirection {
-    _scrollDirection = scrollDirection;
-    _flowLayout.scrollDirection = scrollDirection;
+- (void)setAutoScrollDirection:(UICollectionViewScrollDirection)autoScrollDirection {
+    _autoScrollDirection = autoScrollDirection;
+    _flowLayout.scrollDirection = autoScrollDirection;
 }
 
 - (void)setAutoScrollTimeInterval:(CGFloat)autoScrollTimeInterval {
     _autoScrollTimeInterval = autoScrollTimeInterval;
     
     [self setAutoScroll:self.autoScroll];
+}
+
+#pragma mark -UIScrollDelegate
+//当手指滑动scrollView是暂停定时器
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    if (self.autoScroll) {
+        [self invalidateTimer];
+    }
+    
+}
+//当滑动结束时开始定时器
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (self.autoScroll) {
+        [self setupTimer];
+    }
 }
 
 #pragma  mark -actions
@@ -160,7 +221,7 @@ NSString * const cellID = @"HHJCollectionViewCell";
     if (_flowLayout.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
         index = (_mainView.contentOffset.x + _flowLayout.itemSize.width*0.5)/_flowLayout.itemSize.width;
     }else {
-        index = (_mainView.contentOffset.y + _flowLayout.itemSize.height*0.5)/_flowLayout.itemSize.width;
+        index = (_mainView.contentOffset.y + _flowLayout.itemSize.height*0.5)/_flowLayout.itemSize.height;
     }
     return MAX(0, index);
 }
@@ -192,6 +253,21 @@ NSString * const cellID = @"HHJCollectionViewCell";
     [super layoutSubviews];
     _flowLayout.itemSize = self.frame.size;
     _mainView.frame = self.bounds;
+    
+    CGSize pageControlSize = CGSizeZero;
+    if ([self.pageControl isKindOfClass:[UIControl class]]) {
+        pageControlSize = CGSizeMake(self.imagesArray.count*self.pageControlDotSize.width*1.5, self.pageControlDotSize.height);
+    }
+    CGFloat pageControlX = (self.hj_width-pageControlSize.width)/2;
+    
+    if (self.pageControlAliment == HHJPageControlAlimentRight) {
+        pageControlX = self.mainView.hj_width - pageControlSize.width - 10;
+    }
+    CGFloat pageControlY = self.mainView.hj_height-pageControlSize.height-10;
+    
+    CGRect pageControlFrame = CGRectMake(pageControlX, pageControlY, pageControlSize.width, pageControlSize.height);
+    self.pageControl.frame = pageControlFrame;
+    
     
 }
 
