@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		40F8665C4C023D633CA5384C /* libPods-HHJImageScroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B029B787C6A953802217B3EB /* libPods-HHJImageScroll.a */; };
+		4D5D03F41ED7CE7F00B3AD95 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D03ED1ED7CE7F00B3AD95 /* TAAbstractDotView.m */; };
+		4D5D03F51ED7CE7F00B3AD95 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D03EF1ED7CE7F00B3AD95 /* TAAnimatedDotView.m */; };
+		4D5D03F61ED7CE7F00B3AD95 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D03F11ED7CE7F00B3AD95 /* TADotView.m */; };
+		4D5D03F71ED7CE7F00B3AD95 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D03F31ED7CE7F00B3AD95 /* TAPageControl.m */; };
+		4D5D03FA1ED81A9800B3AD95 /* WebImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D03F91ED81A9800B3AD95 /* WebImageVC.m */; };
 		A67865731ED057CE003C2A11 /* UIView+HHJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865721ED057CE003C2A11 /* UIView+HHJExtension.m */; };
 		A67865761ED143C6003C2A11 /* HHJImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865751ED143C6003C2A11 /* HHJImageScrollView.m */; };
 		A67865791ED1629D003C2A11 /* HHJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865781ED1629D003C2A11 /* HHJCollectionViewCell.m */; };
@@ -40,6 +45,16 @@
 
 /* Begin PBXFileReference section */
 		44F699FE78FBD694A5FF5DCA /* Pods-HHJImageScroll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHJImageScroll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HHJImageScroll/Pods-HHJImageScroll.debug.xcconfig"; sourceTree = "<group>"; };
+		4D5D03EC1ED7CE7F00B3AD95 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		4D5D03ED1ED7CE7F00B3AD95 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		4D5D03EE1ED7CE7F00B3AD95 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		4D5D03EF1ED7CE7F00B3AD95 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		4D5D03F01ED7CE7F00B3AD95 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		4D5D03F11ED7CE7F00B3AD95 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		4D5D03F21ED7CE7F00B3AD95 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		4D5D03F31ED7CE7F00B3AD95 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		4D5D03F81ED81A9800B3AD95 /* WebImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImageVC.h; sourceTree = "<group>"; };
+		4D5D03F91ED81A9800B3AD95 /* WebImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImageVC.m; sourceTree = "<group>"; };
 		651B9F6BBA2C47A2EFCDACCB /* Pods-HHJImageScroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHJImageScroll.release.xcconfig"; path = "Pods/Target Support Files/Pods-HHJImageScroll/Pods-HHJImageScroll.release.xcconfig"; sourceTree = "<group>"; };
 		A67865711ED057CE003C2A11 /* UIView+HHJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HHJExtension.h"; sourceTree = "<group>"; };
 		A67865721ED057CE003C2A11 /* UIView+HHJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HHJExtension.m"; sourceTree = "<group>"; };
@@ -93,6 +108,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D5D03EB1ED7CE7F00B3AD95 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				4D5D03EC1ED7CE7F00B3AD95 /* TAAbstractDotView.h */,
+				4D5D03ED1ED7CE7F00B3AD95 /* TAAbstractDotView.m */,
+				4D5D03EE1ED7CE7F00B3AD95 /* TAAnimatedDotView.h */,
+				4D5D03EF1ED7CE7F00B3AD95 /* TAAnimatedDotView.m */,
+				4D5D03F01ED7CE7F00B3AD95 /* TADotView.h */,
+				4D5D03F11ED7CE7F00B3AD95 /* TADotView.m */,
+				4D5D03F21ED7CE7F00B3AD95 /* TAPageControl.h */,
+				4D5D03F31ED7CE7F00B3AD95 /* TAPageControl.m */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
 		A678656F1ED04075003C2A11 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +134,7 @@
 		A67865701ED040B1003C2A11 /* HHJImageScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				4D5D03EB1ED7CE7F00B3AD95 /* PageControl */,
 				A67865711ED057CE003C2A11 /* UIView+HHJExtension.h */,
 				A67865721ED057CE003C2A11 /* UIView+HHJExtension.m */,
 				A67865741ED143C6003C2A11 /* HHJImageScrollView.h */,
@@ -119,6 +150,8 @@
 			children = (
 				A678657B1ED18179003C2A11 /* LocalVC.h */,
 				A678657C1ED18179003C2A11 /* LocalVC.m */,
+				4D5D03F81ED81A9800B3AD95 /* WebImageVC.h */,
+				4D5D03F91ED81A9800B3AD95 /* WebImageVC.m */,
 			);
 			path = ScrollType;
 			sourceTree = "<group>";
@@ -392,12 +425,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A67865761ED143C6003C2A11 /* HHJImageScrollView.m in Sources */,
+				4D5D03F41ED7CE7F00B3AD95 /* TAAbstractDotView.m in Sources */,
 				A67865791ED1629D003C2A11 /* HHJCollectionViewCell.m in Sources */,
 				A6F1177B1ED0265500B98C0F /* AppDelegate.m in Sources */,
 				A6F117A51ED026D200B98C0F /* HHJRootVC.m in Sources */,
+				4D5D03FA1ED81A9800B3AD95 /* WebImageVC.m in Sources */,
 				A678657D1ED18179003C2A11 /* LocalVC.m in Sources */,
+				4D5D03F71ED7CE7F00B3AD95 /* TAPageControl.m in Sources */,
 				A6F117781ED0265500B98C0F /* main.m in Sources */,
 				A67865731ED057CE003C2A11 /* UIView+HHJExtension.m in Sources */,
+				4D5D03F51ED7CE7F00B3AD95 /* TAAnimatedDotView.m in Sources */,
+				4D5D03F61ED7CE7F00B3AD95 /* TADotView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

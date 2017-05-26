@@ -9,12 +9,14 @@
 #import "HHJImageScrollView.h"
 #import "UIView+HHJExtension.h"
 #import "HHJCollectionViewCell.h"
+#import "TAPageControl.h"
+#import "UIImageView+WebCache.h"
 
 NSString * const cellID = @"HHJCollectionViewCell";
 
 #define pageControlDotDefaultSize           CGSizeMake(10, 10)
 
-@interface HHJImageScrollView ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface HHJImageScrollView ()<UICollectionViewDelegate, UICollectionViewDataSource, TAPageControlDelegate>
 
 @property (nonatomic, strong)UICollectionViewFlowLayout             *flowLayout;
 @property (nonatomic, strong)UICollectionView                       *mainView;
@@ -37,6 +39,13 @@ NSString * const cellID = @"HHJCollectionViewCell";
     return imageScrollV;
 }
 
++ (instancetype)imageScrollViewWithFrame:(CGRect)frame imageUrlStringArray:(NSArray *)urlArray placeholderImage:(UIImage *)placeholderImage {
+    HHJImageScrollView *imageScrollV = [[self alloc] initWithFrame:frame];
+    imageScrollV.imagesArray = urlArray;
+    imageScrollV.placeholderImage = placeholderImage;
+    return imageScrollV;
+}
+
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self initialization];
@@ -53,7 +62,7 @@ NSString * const cellID = @"HHJCollectionViewCell";
     _autoScrollDirection = UICollectionViewScrollDirectionHorizontal;
     _autoScrollTimeInterval = 2.0;
     _hidesForSinglePage = YES;
-    _pageControlStyle = HHJScrollViewPageControlStyleSystem;
+    _pageControlStyle = HHJScrollViewPageControlStyleAnimated;
     _pageControlDotSize = pageControlDotDefaultSize;
     _pageControlRightOffset = 0;
     _pageControlBottomOffset = 0;
@@ -93,7 +102,14 @@ NSString * const cellID = @"HHJCollectionViewCell";
     switch (self.pageControlStyle) {
         case HHJScrollViewPageControlStyleAnimated:
         {
-        
+            TAPageControl *tAPageControl = [[TAPageControl alloc] init];
+            tAPageControl.numberOfPages = self.imagesArray.count;
+            tAPageControl.dotColor = self.currentPageDotColor;
+            tAPageControl.userInteractionEnabled = YES;
+            tAPageControl.delegate = self;
+            [self addSubview:tAPageControl];
+            _pageControl = tAPageControl;
+            
         }
             break;
         case HHJScrollViewPageControlStyleSystem:
@@ -110,23 +126,31 @@ NSString * const cellID = @"HHJCollectionViewCell";
             break;
     }
     
+    
+    if (self.currentPageDotImage) {
+        self.currentPageDotImage = self.currentPageDotImage;
+    }
+    if (self.othersPageDotImage) {
+        self.othersPageDotImage = self.othersPageDotImage;
+    }
+    
 }
 
-#pragma mark -UICollectionViewDelegate & UICollectionViewDatasource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.totalItemsCount;
-}
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    HHJCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
-    int itemIndex = [self pageControlIndexWithCurrentCellIndex:indexPath.row];
-    UIImage *image = [UIImage imageNamed:self.imagesArray[itemIndex]];
-    if (!image) {
-        [UIImage imageWithContentsOfFile:self.imagesArray[indexPath.row]];
+- (void)customPageControlDotImage:(UIImage *)image isCurrentPageControl:(BOOL)isCurrentPageControl {
+    if (!image || !self.pageControl) {
+        return;
     }
-    cell.imageView.image = (UIImage *)image;
-    return cell;
+    if ([self.pageControl isKindOfClass:[TAPageControl class]]) {
+        TAPageControl *tAPageControl = (TAPageControl *)_pageControl;
+        if (isCurrentPageControl) {
+            tAPageControl.currentDotImage = image;
+        }else {
+            tAPageControl.dotImage = image;
+        }
+    }
 }
-#pragma mark -property
+
+#pragma mark -Setters
 -(void)setIsInfiniteLoop:(BOOL)isInfiniteLoop {
     _isInfiniteLoop = isInfiniteLoop;
     if (self.imagesArray.count) {
@@ -173,6 +197,76 @@ NSString * const cellID = @"HHJCollectionViewCell";
     [self setAutoScroll:self.autoScroll];
 }
 
+- (void)setPageControlRightOffset:(CGFloat)pageControlRightOffset {
+    _pageControlRightOffset = pageControlRightOffset;
+}
+
+- (void)setPageControlBottomOffset:(CGFloat)pageControlBottomOffset {
+    _pageControlBottomOffset = pageControlBottomOffset;
+}
+
+- (void)setCurrentPageDotColor:(UIColor *)currentPageDotColor {
+    _currentPageDotColor = currentPageDotColor;
+    if ([self.pageControl isKindOfClass:[TAPageControl class]]) {
+        TAPageControl *tAPageControl = (TAPageControl *)_pageControl;
+        tAPageControl.dotColor = currentPageDotColor;
+    }else {
+        UIPageControl *pageControl = (UIPageControl *)_pageControl;
+        pageControl.currentPageIndicatorTintColor = currentPageDotColor;
+    }
+}
+
+- (void)setOtherPageDotColor:(UIColor *)otherPageDotColor {
+    _otherPageDotColor = otherPageDotColor;
+    if ([self.pageControl isKindOfClass:[UIPageControl class]]) {
+        UIPageControl *pageControl = (UIPageControl *)_pageControl;
+        pageControl.pageIndicatorTintColor = otherPageDotColor;
+    }
+}
+
+- (void)setCurrentPageDotImage:(UIImage *)currentPageDotImage {
+    _currentPageDotImage = currentPageDotImage;
+    if (self.pageControlStyle != HHJScrollViewPageControlStyleAnimated) {
+        self.pageControlStyle = HHJScrollViewPageControlStyleAnimated;
+    }
+    [self customPageControlDotImage:currentPageDotImage isCurrentPageControl:YES];
+}
+
+- (void)setOthersPageDotImage:(UIImage *)othersPageDotImage {
+    _othersPageDotImage = othersPageDotImage;
+    if (self.pageControlStyle != HHJScrollViewPageControlStyleAnimated) {
+        self.pageControlStyle = HHJScrollViewPageControlStyleAnimated;
+    }
+    [self customPageControlDotImage:othersPageDotImage isCurrentPageControl:NO];
+}
+
+- (void)setPlaceholderImage:(UIImage *)placeholderImage {
+    _placeholderImage = placeholderImage;
+}
+
+#pragma mark -UICollectionViewDelegate & UICollectionViewDatasource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.totalItemsCount;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    HHJCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
+    int itemIndex = [self pageControlIndexWithCurrentCellIndex:indexPath.row];
+    NSString *imageName = self.imagesArray[itemIndex];
+    if ([imageName hasPrefix:@"http://"]||[imageName hasPrefix:@"https://"]) {//加载网络图片
+        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageName] placeholderImage:self.placeholderImage];
+    }else {//本地图片
+        UIImage *image = [UIImage imageNamed:imageName];
+        if (!image) {
+            [UIImage imageWithContentsOfFile:self.imagesArray[indexPath.row]];
+        }
+        cell.imageView.image = (UIImage *)image;
+    }
+    
+    return cell;
+}
+
 #pragma mark -UIScrollDelegate
 //当手指滑动scrollView是暂停定时器
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
@@ -181,11 +275,28 @@ NSString * const cellID = @"HHJCollectionViewCell";
     }
     
 }
+
 //当滑动结束时开始定时器
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if (self.autoScroll) {
         [self setupTimer];
     }
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (!self.imagesArray.count) {//如果此处不做判断 清除timer时有可能会出现问题
+        return;
+    }
+    int currentIndex = [self currentIndex];//当前的item
+    int currentPageControl = [self pageControlIndexWithCurrentCellIndex:currentIndex];
+    if ([self.pageControl isKindOfClass:[UIPageControl class]]) {
+        UIPageControl *pageControl = (UIPageControl *)_pageControl;
+        pageControl.currentPage = currentPageControl;
+    }else {
+        TAPageControl *tAPageControl = (TAPageControl *)_pageControl;
+        tAPageControl.currentPage = currentPageControl;
+    }
+    
 }
 
 #pragma  mark -actions
@@ -255,8 +366,14 @@ NSString * const cellID = @"HHJCollectionViewCell";
     _mainView.frame = self.bounds;
     
     CGSize pageControlSize = CGSizeZero;
-    if ([self.pageControl isKindOfClass:[UIControl class]]) {
+    if ([self.pageControl isKindOfClass:[UIPageControl class]]) {
         pageControlSize = CGSizeMake(self.imagesArray.count*self.pageControlDotSize.width*1.5, self.pageControlDotSize.height);
+    }else {
+        TAPageControl *tAPageControl = (TAPageControl *)_pageControl;
+        if (tAPageControl.dotImage&&tAPageControl.currentDotImage&&CGSizeEqualToSize(pageControlDotDefaultSize, tAPageControl.dotSize)) {
+            tAPageControl.dotSize = self.pageControlDotSize;
+        }
+        pageControlSize = [tAPageControl sizeForNumberOfPages:self.imagesArray.count];
     }
     CGFloat pageControlX = (self.hj_width-pageControlSize.width)/2;
     
@@ -264,10 +381,14 @@ NSString * const cellID = @"HHJCollectionViewCell";
         pageControlX = self.mainView.hj_width - pageControlSize.width - 10;
     }
     CGFloat pageControlY = self.mainView.hj_height-pageControlSize.height-10;
-    
+    if ([self.pageControl isKindOfClass:[TAPageControl class]]) {
+        TAPageControl *tAPageControl = (TAPageControl *)_pageControl;
+        [tAPageControl sizeToFit];
+    }
     CGRect pageControlFrame = CGRectMake(pageControlX, pageControlY, pageControlSize.width, pageControlSize.height);
+    pageControlFrame.origin.x -= self.pageControlRightOffset;
+    pageControlFrame.origin.y -= self.pageControlBottomOffset;
     self.pageControl.frame = pageControlFrame;
-    
     
 }
 

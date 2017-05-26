@@ -25,14 +25,23 @@
     //解决CollectionView里的cell的偏移问题；
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    NSArray *imageNameArray = @[@"h1.jpg",
-                                @"h2.jpg",
-                                @"h3.jpg",
-                                @"h4.jpg"];
+    NSArray *imageNameArray = @[@"car01.jpeg",
+                                @"car02.jpeg",
+                                @"car03.jpeg",
+                                @"car04.jpeg",
+                                @"car05.jpeg",
+                                @"car06.jpeg"];
     
-    HHJImageScrollView *imageScroll = [HHJImageScrollView imageScrollViewWithFrame:CGRectMake(0, 64, hjScreen_width, 180) isInfiniteLoop:YES imageNamesArray:imageNameArray];
-    imageScroll.autoScrollDirection = UICollectionViewScrollDirectionVertical;
+    HHJImageScrollView *imageScroll = [HHJImageScrollView imageScrollViewWithFrame:CGRectMake(0, 64, hjScreen_width, 220) isInfiniteLoop:YES imageNamesArray:imageNameArray];
     [self.view addSubview:imageScroll];
+    
+    imageScroll.pageControlDotSize = CGSizeMake(40, 20);
+//    imageScroll.pageControlRightOffset = 50;
+//    imageScroll.pageControlBottomOffset = 100;
+    imageScroll.autoScrollDirection = UICollectionViewScrollDirectionHorizontal;
+//    imageScroll.currentPageDotColor = [UIColor redColor];
+//    imageScroll.currentPageDotImage = [UIImage imageNamed:@"pageControlCurrentDot"];
+//    imageScroll.othersPageDotImage = [UIImage imageNamed:@"pageControlDot"];
     _imageScroll = imageScroll;
     
 }

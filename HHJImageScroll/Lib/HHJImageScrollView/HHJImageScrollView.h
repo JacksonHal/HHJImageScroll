@@ -21,7 +21,7 @@ typedef enum {
 
 @interface HHJImageScrollView : UIView
 
-
+/************************轮播图的初始化*********************/
 /**
  本地图片轮播初始化
 
@@ -30,7 +30,17 @@ typedef enum {
  @param imageNamesArray 存放本地轮播图片的数组
  @return HHJImageScrollView的对象
  */
-+(instancetype)imageScrollViewWithFrame:(CGRect)frame isInfiniteLoop:(BOOL)isInfiiteLoop imageNamesArray:(NSArray *)imageNamesArray;
++ (instancetype)imageScrollViewWithFrame:(CGRect)frame isInfiniteLoop:(BOOL)isInfiiteLoop imageNamesArray:(NSArray *)imageNamesArray;
+
+/**
+ 网络图片轮播图的初始化
+
+ @param frame imageScrollView的frame
+ @param urlArray 存放网络图片的地址的数组
+ @param placeholderImage 网络图片的占位图
+ @return HHJImageScrollView的对象
+ */
++ (instancetype)imageScrollViewWithFrame:(CGRect)frame imageUrlStringArray:(NSArray *)urlArray placeholderImage:(UIImage *)placeholderImage;
 
 
 
@@ -54,7 +64,10 @@ typedef enum {
  */
 @property (nonatomic, assign) UICollectionViewScrollDirection       autoScrollDirection;
 
-/*****************滚动控制***************/
+
+
+/****************************滚动控制**************************/
+
 //设置自动滚动的时间间隔，默认为2s
 @property (nonatomic, assign)CGFloat            autoScrollTimeInterval;
 
@@ -74,22 +87,46 @@ typedef enum {
 /**
  分页控件小圆标大小
  */
-@property (nonatomic, assign) CGSize                pageControlDotSize;
+@property (nonatomic, assign) CGSize              pageControlDotSize;
 
 /**
  分页控件距离轮播图的底部间距（在默认间距基础上）的偏移量
  */
-@property (nonatomic, assign) CGFloat               pageControlBottomOffset;
+@property (nonatomic, assign) CGFloat             pageControlBottomOffset;
 
 /**
  分页控件距离轮播图的右边间距（在默认间距基础上）的偏移量
  */
-@property (nonatomic, assign) CGFloat               pageControlRightOffset;
-
+@property (nonatomic, assign) CGFloat             pageControlRightOffset;
 
 /**
  分页控件位置
  */
 @property (nonatomic, assign) HHJPageControlAliment pageControlAliment;
+
+/**
+ 当前分页控件小圆标颜色
+ */
+@property (nonatomic, strong) UIColor             *currentPageDotColor;
+
+/**
+ 其他分页控件小圆标颜色
+ */
+@property (nonatomic, strong) UIColor             *otherPageDotColor;
+
+/**
+ 自定义分页控件当前小圆点的Image
+ */
+@property (nonatomic, strong) UIImage             *currentPageDotImage;
+
+/**
+ 自定义分页控件其他小圆点的Image
+ */
+@property (nonatomic, strong) UIImage             *othersPageDotImage;
+
+
+/****************************网络图片的处理******************************/
+
+@property (nonatomic, strong) UIImage             *placeholderImage;
 
 @end
