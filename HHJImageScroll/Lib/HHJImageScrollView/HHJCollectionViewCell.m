@@ -26,6 +26,6 @@
 -(void)layoutSubviews {
     [super layoutSubviews];
     _imageView.frame = self.bounds;
-    _imageView.backgroundColor = [UIColor blueColor];
+    
 }
 @end

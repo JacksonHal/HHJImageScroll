@@ -77,7 +77,6 @@ NSString * const cellID = @"HHJCollectionViewCell";
     _flowLayout = flowLayout;
     
     UICollectionView *mainView= [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:_flowLayout];
-    mainView.backgroundColor = [UIColor redColor];
     mainView.pagingEnabled = YES;
     mainView.showsVerticalScrollIndicator = NO;
     mainView.showsHorizontalScrollIndicator = NO;
