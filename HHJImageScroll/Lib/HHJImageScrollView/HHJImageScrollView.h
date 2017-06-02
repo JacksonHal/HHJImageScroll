@@ -8,16 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum {
+typedef NS_ENUM(NSInteger, HHJScrollViewPageControlStyle) {
     HHJScrollViewPageControlStyleSystem,        //系统自带的样式
     HHJScrollViewPageControlStyleAnimated,      //动画效果pageControl
     HHJScrollViewPageControlStyleNone,          //不显示pageControl
-}HHJScrollViewPageControlStyle;
+};
 
-typedef enum {
+typedef NS_ENUM(NSInteger, HHJPageControlAliment) {
     HHJPageControlAlimentRight,                 //分页控制器居右端
     HHJPageControlAlimentCenter,                //分页控制器居中心
-}HHJPageControlAliment;
+};
+
 
 @interface HHJImageScrollView : UIView
 
@@ -53,6 +54,17 @@ typedef enum {
  本地图片数组
  */
 @property (nonatomic, strong) NSArray           *localImageNamesArray;
+
+
+/**
+ 网络图片的数组
+ */
+@property (nonatomic, strong) NSArray             *imageUrlArray;
+
+/**
+ 每张图片上边显示的文字说明
+ */
+@property (nonatomic, strong) NSArray             *titleArray;
 
 /**
  是否自动滚动,默认Yes
@@ -128,5 +140,37 @@ typedef enum {
 /****************************网络图片的处理******************************/
 
 @property (nonatomic, strong) UIImage             *placeholderImage;
+
+
+/****************************图片上文字的处理******************************/
+/**
+ 是否只显示文字轮播
+ */
+@property (nonatomic, assign)BOOL                   onlyDispalyTitle;
+
+/**
+ 文字控件的高度
+ */
+@property (nonatomic, assign)CGFloat                titleLabelHeight;
+
+/**
+ 显示文字的颜色
+ */
+@property (nonatomic, strong)UIColor                *textColor;
+
+/**
+ 文字控件的背景色
+ */
+@property (nonatomic, strong)UIColor                *titleLabelBgColor;
+
+/**
+ 文字的对齐方式
+ */
+@property (nonatomic, assign)NSTextAlignment        textAlign;
+
+/**
+ 显示文字的大小
+ */
+@property (nonatomic, strong)UIFont                 *textFont;
 
 @end

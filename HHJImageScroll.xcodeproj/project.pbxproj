@@ -13,6 +13,7 @@
 		4D5D03F61ED7CE7F00B3AD95 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D03F11ED7CE7F00B3AD95 /* TADotView.m */; };
 		4D5D03F71ED7CE7F00B3AD95 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D03F31ED7CE7F00B3AD95 /* TAPageControl.m */; };
 		4D5D03FA1ED81A9800B3AD95 /* WebImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5D03F91ED81A9800B3AD95 /* WebImageVC.m */; };
+		4D8A36331EE16B0500B9DBCB /* ImageAndTitleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8A36321EE16B0500B9DBCB /* ImageAndTitleVC.m */; };
 		A67865731ED057CE003C2A11 /* UIView+HHJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865721ED057CE003C2A11 /* UIView+HHJExtension.m */; };
 		A67865761ED143C6003C2A11 /* HHJImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865751ED143C6003C2A11 /* HHJImageScrollView.m */; };
 		A67865791ED1629D003C2A11 /* HHJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865781ED1629D003C2A11 /* HHJCollectionViewCell.m */; };
@@ -55,6 +56,8 @@
 		4D5D03F31ED7CE7F00B3AD95 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
 		4D5D03F81ED81A9800B3AD95 /* WebImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImageVC.h; sourceTree = "<group>"; };
 		4D5D03F91ED81A9800B3AD95 /* WebImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImageVC.m; sourceTree = "<group>"; };
+		4D8A36311EE16B0500B9DBCB /* ImageAndTitleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTitleVC.h; sourceTree = "<group>"; };
+		4D8A36321EE16B0500B9DBCB /* ImageAndTitleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndTitleVC.m; sourceTree = "<group>"; };
 		651B9F6BBA2C47A2EFCDACCB /* Pods-HHJImageScroll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHJImageScroll.release.xcconfig"; path = "Pods/Target Support Files/Pods-HHJImageScroll/Pods-HHJImageScroll.release.xcconfig"; sourceTree = "<group>"; };
 		A67865711ED057CE003C2A11 /* UIView+HHJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HHJExtension.h"; sourceTree = "<group>"; };
 		A67865721ED057CE003C2A11 /* UIView+HHJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HHJExtension.m"; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				A678657C1ED18179003C2A11 /* LocalVC.m */,
 				4D5D03F81ED81A9800B3AD95 /* WebImageVC.h */,
 				4D5D03F91ED81A9800B3AD95 /* WebImageVC.m */,
+				4D8A36311EE16B0500B9DBCB /* ImageAndTitleVC.h */,
+				4D8A36321EE16B0500B9DBCB /* ImageAndTitleVC.m */,
 			);
 			path = ScrollType;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				A6F1177B1ED0265500B98C0F /* AppDelegate.m in Sources */,
 				A6F117A51ED026D200B98C0F /* HHJRootVC.m in Sources */,
 				4D5D03FA1ED81A9800B3AD95 /* WebImageVC.m in Sources */,
+				4D8A36331EE16B0500B9DBCB /* ImageAndTitleVC.m in Sources */,
 				A678657D1ED18179003C2A11 /* LocalVC.m in Sources */,
 				4D5D03F71ED7CE7F00B3AD95 /* TAPageControl.m in Sources */,
 				A6F117781ED0265500B98C0F /* main.m in Sources */,

@@ -9,6 +9,7 @@
 #import "HHJRootVC.h"
 #import "LocalVC.h"
 #import "WebImageVC.h"
+#import "ImageAndTitleVC.h"
 
 @interface HHJRootVC ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -21,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.arrayType = @[@"本地图片实现轮播",@"网络图片实现轮播"];
+    self.arrayType = @[@"本地图片实现轮播",@"网络图片实现轮播",@"图片上显示文字说明的轮播"];
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -57,8 +58,11 @@
     if (indexPath.row == 0) {
         LocalVC *vc = [[LocalVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 1){
+    }else if (indexPath.row == 1) {
         WebImageVC *vc = [[WebImageVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 2) {
+        ImageAndTitleVC *vc = [[ImageAndTitleVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

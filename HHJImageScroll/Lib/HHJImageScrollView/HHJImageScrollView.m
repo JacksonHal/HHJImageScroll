@@ -67,6 +67,12 @@ NSString * const cellID = @"HHJCollectionViewCell";
     _pageControlRightOffset = 0;
     _pageControlBottomOffset = 0;
     _pageControlAliment = HHJPageControlAlimentCenter;
+    
+    _textFont = [UIFont systemFontOfSize:14.f];
+    _textColor = [UIColor whiteColor];
+    _titleLabelBgColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];//半透明
+    _textAlign = NSTextAlignmentLeft;
+    _titleLabelHeight = 35.f;
 }
 
 - (void)setUpMainView {
@@ -156,9 +162,29 @@ NSString * const cellID = @"HHJCollectionViewCell";
         self.imagesArray = self.imagesArray;
     }
 }
+
 -(void)setLocalImageNamesArray:(NSArray *)localImageNamesArray {
     _localImageNamesArray = localImageNamesArray;
     self.imagesArray = [localImageNamesArray copy];
+}
+
+- (void)setImageUrlArray:(NSArray *)imageUrlArray {
+    _imagesArray = imageUrlArray;
+    
+    NSMutableArray *tempArray = [NSMutableArray new];
+    [imageUrlArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *tempStr;
+        if ([obj isKindOfClass:[NSString class]]) {
+            tempStr = obj;
+        }else if ([obj isKindOfClass:[NSURL class]]) {
+            NSURL *url = (NSURL *)obj;
+            tempStr = [url absoluteString];
+        }
+        if (tempStr) {
+            [tempArray addObject:tempStr];
+        }
+    }];
+    self.imagesArray = [tempArray copy];
 }
 
 -(void)setImagesArray:(NSArray *)imagesArray {
@@ -174,6 +200,13 @@ NSString * const cellID = @"HHJCollectionViewCell";
     }
     [self setUpPageControl];
     [self.mainView reloadData];
+}
+
+- (void)setTitleArray:(NSArray *)titleArray {
+    _titleArray = titleArray;
+    if (self.onlyDispalyTitle) {
+        self.backgroundColor = [UIColor clearColor];
+    }
 }
 
 -(void)setAutoScroll:(BOOL)autoScroll {
@@ -253,14 +286,32 @@ NSString * const cellID = @"HHJCollectionViewCell";
     HHJCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     int itemIndex = [self pageControlIndexWithCurrentCellIndex:indexPath.row];
     NSString *imageName = self.imagesArray[itemIndex];
-    if ([imageName hasPrefix:@"http://"]||[imageName hasPrefix:@"https://"]) {//加载网络图片
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageName] placeholderImage:self.placeholderImage];
-    }else {//本地图片
-        UIImage *image = [UIImage imageNamed:imageName];
-        if (!image) {
-            [UIImage imageWithContentsOfFile:self.imagesArray[indexPath.row]];
+    if (!self.onlyDispalyTitle && [imageName isKindOfClass:[NSString class]]) {
+        if ([imageName hasPrefix:@"http://"]||[imageName hasPrefix:@"https://"]) {//加载网络图片
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageName] placeholderImage:self.placeholderImage];
+        }else {//本地图片
+            UIImage *image = [UIImage imageNamed:imageName];
+            if (!image) {
+                [UIImage imageWithContentsOfFile:self.imagesArray[indexPath.row]];
+            }
+            cell.imageView.image = (UIImage *)image;
         }
-        cell.imageView.image = (UIImage *)image;
+    }else if (!self.onlyDispalyTitle && [imageName isKindOfClass:[UIImage class]]) {
+        cell.imageView.image = (UIImage *)imageName;
+    }
+    
+    if (_titleArray.count && (itemIndex<_titleArray.count)) {
+        cell.title = _titleArray[itemIndex];
+    }
+    
+    if (!cell.hasConfigured) {
+        cell.textFont = self.textFont;
+        cell.textAlign = self.textAlign;
+        cell.titleLabelHeight = self.titleLabelHeight;
+        cell.titleLabelBgColor = self.titleLabelBgColor;
+        cell.textColor = self.textColor;
+        cell.hasConfigured = YES;
+        cell.onlyDispalyTitle = self.onlyDispalyTitle;
     }
     
     return cell;
