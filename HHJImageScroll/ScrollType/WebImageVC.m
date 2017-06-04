@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"网络图片";
+    
     self.view.backgroundColor = [UIColor whiteColor];
     //解决CollectionView里的cell的偏移问题；
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -43,6 +43,17 @@
     imageScroll.currentPageDotImage = [UIImage imageNamed:@"pageControlCurrentDot"];
     imageScroll.othersPageDotImage = [UIImage imageNamed:@"pageControlDot"];
     _imageScroll = imageScroll;
+    
+    //block监听图片的点击事件
+    
+    _imageScroll.clickImageIndexOperationBlock = ^(NSInteger index) {
+        NSLog(@"我点击的是第%ld张图片",index);
+    };
+    
+    //block监听图片的滚动事件
+    _imageScroll.scrollToImageIndexOperationBlock = ^(NSInteger index) {
+        NSLog(@"图片滚动到第%ld张",index);
+    };
 }
 
 - (void)didReceiveMemoryWarning {

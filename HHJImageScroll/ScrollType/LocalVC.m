@@ -11,7 +11,7 @@
 
 #define hjScreen_width    [UIScreen mainScreen].bounds.size.width
 
-@interface LocalVC ()
+@interface LocalVC ()<HHJImageScrollViewDelegate>
 
 @property (nonatomic, strong)HHJImageScrollView         *imageScroll;
 
@@ -21,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"本地图片";
     self.view.backgroundColor = [UIColor whiteColor];
     //解决CollectionView里的cell的偏移问题；
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -34,6 +33,7 @@
                                 @"car06.jpeg"];
     
     HHJImageScrollView *imageScroll = [HHJImageScrollView imageScrollViewWithFrame:CGRectMake(0, 64, hjScreen_width, 220) isInfiniteLoop:YES imageNamesArray:imageNameArray];
+    imageScroll.delegate = self;
     [self.view addSubview:imageScroll];
     
     imageScroll.pageControlDotSize = CGSizeMake(40, 20);
@@ -52,6 +52,16 @@
     
 }
 
+#pragma mark -HHJImageScrollViewDelegate
 
+//点击图片的回调
+- (void)imageScrollView:(HHJImageScrollView *)imageScrollView didSelectImageIndex:(NSInteger)index {
+    NSLog(@"我点击的是第%ld张图片",index);
+}
+
+//图片滚动时的回调
+- (void)imageScrollView:(HHJImageScrollView *)imageScrollView scrollToImageIndex:(NSInteger)index {
+    NSLog(@"图片滚动到第%ld张",index);
+}
 
 @end

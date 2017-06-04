@@ -57,6 +57,12 @@ NSString * const cellID = @"HHJCollectionViewCell";
 - (void)initialization {
     self.backgroundColor = [UIColor lightGrayColor];
     
+    _textFont = [UIFont systemFontOfSize:14.f];
+    _textColor = [UIColor whiteColor];
+    _titleLabelBgColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];//半透明
+    _textAlign = NSTextAlignmentLeft;
+    _titleLabelHeight = 35.f;
+    
     _autoScroll = YES;
     _isInfiniteLoop = YES;
     _autoScrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -67,12 +73,12 @@ NSString * const cellID = @"HHJCollectionViewCell";
     _pageControlRightOffset = 0;
     _pageControlBottomOffset = 0;
     _pageControlAliment = HHJPageControlAlimentCenter;
+    _bannerImageViewContentMode = UIViewContentModeScaleToFill;
+    _currentPageDotColor = [UIColor whiteColor];
+    _otherPageDotColor = [UIColor lightGrayColor];
     
-    _textFont = [UIFont systemFontOfSize:14.f];
-    _textColor = [UIColor whiteColor];
-    _titleLabelBgColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];//半透明
-    _textAlign = NSTextAlignmentLeft;
-    _titleLabelHeight = 35.f;
+    
+    
 }
 
 - (void)setUpMainView {
@@ -84,6 +90,7 @@ NSString * const cellID = @"HHJCollectionViewCell";
     
     UICollectionView *mainView= [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:_flowLayout];
     mainView.pagingEnabled = YES;
+    mainView.backgroundColor = [UIColor clearColor];
     mainView.showsVerticalScrollIndicator = NO;
     mainView.showsHorizontalScrollIndicator = NO;
     mainView.dataSource = self;
@@ -96,12 +103,12 @@ NSString * const cellID = @"HHJCollectionViewCell";
 
 -(void)setUpPageControl {
     if (_pageControl) {
+        [_pageControl removeFromSuperview];
+    }
+    if (_imagesArray.count == 0 || self.onlyDispalyTitle) {
         return;
     }
-    if (_imagesArray.count == 0) {
-        return;
-    }
-    if (_imagesArray.count == 0 && self.hidesForSinglePage == YES) {
+    if (_imagesArray.count == 0 && self.hidesForSinglePage ) {
         return;
     }
     switch (self.pageControlStyle) {
@@ -205,7 +212,12 @@ NSString * const cellID = @"HHJCollectionViewCell";
 - (void)setTitleArray:(NSArray *)titleArray {
     _titleArray = titleArray;
     if (self.onlyDispalyTitle) {
-        self.backgroundColor = [UIColor clearColor];
+        NSMutableArray *tempArray = [NSMutableArray new];
+        for (NSInteger i = 0; i < titleArray.count; i++) {
+            [tempArray addObject:@""];
+        }
+        //self.backgroundColor = [UIColor clearColor];
+        self.imageUrlArray = [tempArray copy];
     }
 }
 
@@ -311,15 +323,26 @@ NSString * const cellID = @"HHJCollectionViewCell";
         cell.titleLabelBgColor = self.titleLabelBgColor;
         cell.textColor = self.textColor;
         cell.hasConfigured = YES;
+        cell.imageView.contentMode = self.bannerImageViewContentMode;
+        cell.clipsToBounds = YES;
         cell.onlyDispalyTitle = self.onlyDispalyTitle;
     }
     
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(imageScrollView:didSelectImageIndex:)]) {
+        [self.delegate imageScrollView:self didSelectImageIndex:[self pageControlIndexWithCurrentCellIndex:indexPath.row]];
+    }
+    if (self.clickImageIndexOperationBlock) {
+        self.clickImageIndexOperationBlock([self pageControlIndexWithCurrentCellIndex:indexPath.row]);
+    }
+}
+
 #pragma mark -UIScrollDelegate
 //当手指滑动scrollView是暂停定时器
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     if (self.autoScroll) {
         [self invalidateTimer];
     }
@@ -327,7 +350,7 @@ NSString * const cellID = @"HHJCollectionViewCell";
 }
 
 //当滑动结束时开始定时器
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if (self.autoScroll) {
         [self setupTimer];
     }
@@ -347,6 +370,18 @@ NSString * const cellID = @"HHJCollectionViewCell";
         tAPageControl.currentPage = currentPageControl;
     }
     
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    if (!self.imagesArray.count) {
+        return;
+    }
+    if ([self.delegate respondsToSelector:@selector(imageScrollView:scrollToImageIndex:)]) {
+        [self.delegate imageScrollView:self scrollToImageIndex:[self pageControlIndexWithCurrentCellIndex:[self currentIndex]]];
+    }
+    if (self.scrollToImageIndexOperationBlock) {
+        self.scrollToImageIndexOperationBlock([self pageControlIndexWithCurrentCellIndex:[self currentIndex]]);
+    }
 }
 
 #pragma  mark -actions

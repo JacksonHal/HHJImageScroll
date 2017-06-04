@@ -19,6 +19,28 @@ typedef NS_ENUM(NSInteger, HHJPageControlAliment) {
     HHJPageControlAlimentCenter,                //分页控制器居中心
 };
 
+@class HHJImageScrollView;
+@protocol HHJImageScrollViewDelegate <NSObject>
+
+@optional
+
+/**
+ 点击轮播图片的回调
+
+ @param imageScrollView imageScrollView
+ @param index 点击图片的索引
+ */
+- (void)imageScrollView:(HHJImageScrollView *)imageScrollView didSelectImageIndex:(NSInteger)index;
+
+/**
+ 图片滚动的回调
+
+ @param imageScrollView imageScrollView
+ @param index 将要滚动到的图片的索引
+ */
+- (void)imageScrollView:(HHJImageScrollView *)imageScrollView scrollToImageIndex:(NSInteger)index;
+
+@end
 
 @interface HHJImageScrollView : UIView
 
@@ -43,7 +65,17 @@ typedef NS_ENUM(NSInteger, HHJPageControlAliment) {
  */
 + (instancetype)imageScrollViewWithFrame:(CGRect)frame imageUrlStringArray:(NSArray *)urlArray placeholderImage:(UIImage *)placeholderImage;
 
+@property (nonatomic, weak)id<HHJImageScrollViewDelegate> delegate;
 
+/**
+ block监听图片的点击事件
+ */
+@property (nonatomic, copy)void (^clickImageIndexOperationBlock)(NSInteger index);
+
+/**
+ block监听图片的滚动事件
+ */
+@property (nonatomic, copy)void (^scrollToImageIndexOperationBlock)(NSInteger index);
 
 /**
  是否无限循环,默认Yes
@@ -75,6 +107,11 @@ typedef NS_ENUM(NSInteger, HHJPageControlAliment) {
  图片的滚动方向，默认水平滚动
  */
 @property (nonatomic, assign) UICollectionViewScrollDirection       autoScrollDirection;
+
+/**
+ 轮播图片的ContentMode，默认为 UIViewContentModeScaleToFill
+ */
+@property (nonatomic, assign) UIViewContentMode bannerImageViewContentMode;
 
 
 

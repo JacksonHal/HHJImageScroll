@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"网络图片";
+    
     self.view.backgroundColor = [UIColor whiteColor];
     //解决CollectionView里的cell的偏移问题；
     self.automaticallyAdjustsScrollViewInsets = NO;

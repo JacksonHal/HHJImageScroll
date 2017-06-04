@@ -10,6 +10,7 @@
 #import "LocalVC.h"
 #import "WebImageVC.h"
 #import "ImageAndTitleVC.h"
+#import "SingleTextVC.h"
 
 @interface HHJRootVC ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -22,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.arrayType = @[@"本地图片实现轮播",@"网络图片实现轮播",@"图片上显示文字说明的轮播"];
+    self.arrayType = @[@"本地图片实现轮播",@"网络图片实现轮播",@"图片上显示文字说明的轮播",@"纯文本上下轮播"];
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -55,16 +56,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        LocalVC *vc = [[LocalVC alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 1) {
-        WebImageVC *vc = [[WebImageVC alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 2) {
-        ImageAndTitleVC *vc = [[ImageAndTitleVC alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSArray *classNameArray = @[@"LocalVC",
+                                @"WebImageVC",
+                                @"ImageAndTitleVC",
+                                @"SingleTextVC",];
+    Class clss = NSClassFromString(classNameArray[indexPath.row]);
+    UIViewController *vc = [[clss alloc] init];
+    vc.navigationItem.title = self.arrayType[indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 

@@ -18,6 +18,7 @@
 		A67865761ED143C6003C2A11 /* HHJImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865751ED143C6003C2A11 /* HHJImageScrollView.m */; };
 		A67865791ED1629D003C2A11 /* HHJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A67865781ED1629D003C2A11 /* HHJCollectionViewCell.m */; };
 		A678657D1ED18179003C2A11 /* LocalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A678657C1ED18179003C2A11 /* LocalVC.m */; };
+		A6BF918D1EE2D92D0059E1FF /* SingleTextVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BF918C1EE2D92D0059E1FF /* SingleTextVC.m */; };
 		A6F117781ED0265500B98C0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F117771ED0265500B98C0F /* main.m */; };
 		A6F1177B1ED0265500B98C0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F1177A1ED0265500B98C0F /* AppDelegate.m */; };
 		A6F1177D1ED0265500B98C0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6F1177C1ED0265500B98C0F /* Assets.xcassets */; };
@@ -67,6 +68,8 @@
 		A67865781ED1629D003C2A11 /* HHJCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHJCollectionViewCell.m; sourceTree = "<group>"; };
 		A678657B1ED18179003C2A11 /* LocalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalVC.h; sourceTree = "<group>"; };
 		A678657C1ED18179003C2A11 /* LocalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalVC.m; sourceTree = "<group>"; };
+		A6BF918B1EE2D92D0059E1FF /* SingleTextVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleTextVC.h; sourceTree = "<group>"; };
+		A6BF918C1EE2D92D0059E1FF /* SingleTextVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleTextVC.m; sourceTree = "<group>"; };
 		A6F117731ED0265500B98C0F /* HHJImageScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHJImageScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F117771ED0265500B98C0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6F117791ED0265500B98C0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				4D5D03F91ED81A9800B3AD95 /* WebImageVC.m */,
 				4D8A36311EE16B0500B9DBCB /* ImageAndTitleVC.h */,
 				4D8A36321EE16B0500B9DBCB /* ImageAndTitleVC.m */,
+				A6BF918B1EE2D92D0059E1FF /* SingleTextVC.h */,
+				A6BF918C1EE2D92D0059E1FF /* SingleTextVC.m */,
 			);
 			path = ScrollType;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A67865761ED143C6003C2A11 /* HHJImageScrollView.m in Sources */,
+				A6BF918D1EE2D92D0059E1FF /* SingleTextVC.m in Sources */,
 				4D5D03F41ED7CE7F00B3AD95 /* TAAbstractDotView.m in Sources */,
 				A67865791ED1629D003C2A11 /* HHJCollectionViewCell.m in Sources */,
 				A6F1177B1ED0265500B98C0F /* AppDelegate.m in Sources */,
