@@ -15,7 +15,7 @@ UICollectionView实现的无限循环自动图片轮播器<br>
 实现代码
 -------
 ```
- `self.automaticallyAdjustsScrollViewInsets = NO;`注意一定要设置
+ self.automaticallyAdjustsScrollViewInsets = NO;//注意一定要设置
     
     NSArray *imageUrlArray = @[@"http://www.tenda.com.cn/newspic/20170502/1ooxg23vu2n.jpg",
                                 @"http://resource.feng.com/resource/h061/h78/img201705181655190.jpg",
@@ -62,7 +62,8 @@ UICollectionView实现的无限循环自动图片轮播器<br>
 注意
 -------
 在使用此工具时，会在控制器的顶部出现一块空白区域。原因是：<br>
-在iOS 7以后，controller 会对其中唯一的scrollView或其子类调整内边距，从而导致位置不准确。设置self.automaticallyAdjustsScrollViewInsets = NO;<br>
+在iOS 7以后，controller 会对其中唯一的scrollView或其子类调整内边距，从而导致位置不准确。设置`self.automaticallyAdjustsScrollViewInsets = NO`;<br>
+其他的设置可以在`HHJImageScrollView.h`查看一下，有详细说明。<br>
 
 演示
 -------
