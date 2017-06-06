@@ -12,5 +12,6 @@ UICollectionView实现的无限循环自动图片轮播器<br>
 实现方法
 -------
 使用工具时将demo下载下来，将demo中的Lib文件夹下的HHJImageScrollView文件拷贝到你的工程中即可<br>
+
 实现代码
 -------
