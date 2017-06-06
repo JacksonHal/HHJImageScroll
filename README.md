@@ -4,7 +4,7 @@ HHJImageScroll
 简介
 --------------
 UICollectionView实现的无限循环自动图片轮播器<br>
-1.本地图片和网络图片的无限轮班；<br>
+1.本地图片和网络图片的无限轮播；<br>
 2.底部带文字说明的图片无限循环自动轮播；<br>
 3.只显示文字的无限循环自动轮播；<br>
 
@@ -19,4 +19,4 @@ UICollectionView实现的无限循环自动图片轮播器<br>
 -------
 * 思路参考：https://github.com/gsdios/SDCycleScrollView
 * 在使用本工具的过程中如果发现有什么bug，欢迎大家在issues中给我提出宝贵的意见。
-* 我的简书：[爱码师](http://www.jianshu.com/u/294a717ea284)
+* 我的简书：[爱码师](http://www.jianshu.com/u/294a717ea284 "爱码师")
