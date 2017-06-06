@@ -17,6 +17,6 @@ UICollectionView实现的无限循环自动图片轮播器<br>
 
 最后
 -------
-*思路参考：https://github.com/gsdios/SDCycleScrollView
-*在使用本工具的过程中如果发现有什么bug，欢迎大家在issues中给我提出宝贵的意见。
-*我的简书：[爱码师](http://www.jianshu.com/u/294a717ea284"爱码师")
+* 思路参考：https://github.com/gsdios/SDCycleScrollView
+* 在使用本工具的过程中如果发现有什么bug，欢迎大家在issues中给我提出宝贵的意见。
+* 我的简书：[爱码师](http://www.jianshu.com/u/294a717ea284"爱码师")
