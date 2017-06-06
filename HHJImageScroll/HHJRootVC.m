@@ -21,8 +21,15 @@
 
 @implementation HHJRootVC
 
+
+/********
+ ********
+ GitHub:https://github.com/JacksonHal/HHJImageScroll
+ ********
+ ********/
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"图片轮播";
     self.arrayType = @[@"本地图片实现轮播",@"网络图片实现轮播",@"图片上显示文字说明的轮播",@"纯文本上下轮播"];
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     tableView.delegate = self;
