@@ -1,3 +1,2 @@
-HHJImageScroll
-
+HHJImageScroll 
 ==============
