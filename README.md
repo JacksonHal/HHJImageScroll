@@ -66,8 +66,8 @@ UICollectionView实现的无限循环自动图片轮播器<br>
 其他的设置可以在`HHJImageScrollView.h`查看一下，有详细说明。<br>
 
 演示
--------
-![]( http://img.027cgb.cn/20170609/201768311978751583.gif )
+--
+![HHJImageScroll.GIF](https://ooo.0o0.ooo/2017/06/08/5938b88dd441c.gif)
 
 最后
 -------
