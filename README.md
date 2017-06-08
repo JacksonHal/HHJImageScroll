@@ -67,7 +67,7 @@ UICollectionView实现的无限循环自动图片轮播器<br>
 
 演示
 -------
-![HHJImageScroll.GIF](http://img.027cgb.cn/20170609/201768311978751583.gif)
+![](http://img.027cgb.cn/20170609/201768311978751583.gif)
 
 最后
 -------
